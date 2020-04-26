@@ -12,4 +12,4 @@ def make_get_request(url, params):
 
 
 def tokenize_word(word):
-    return word
+    return word.strip().lower()

@@ -26,16 +26,17 @@ def coordinates_by_address(place):
     return tuple(map(float, coordinates.split(" ")))
 
 
-def get_bytes_map(coordinates):
+def get_bytes_map(coordinates, map_type):
     map_url = "http://static-maps.yandex.ru/1.x/"
     map_params = {
-        "l": "map",
+        "l": map_type,
         "ll": ",".join(map(str, coordinates)),
+        "z": 7,
     }
 
     response = make_get_request(map_url, map_params)
-    print(response.url)
     if not response:
         print("Не удалось отобразить карту")
         return
+    print(response.url)
     return response.content
