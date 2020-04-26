@@ -34,3 +34,6 @@ class MapLabel(QLabel):
 
     def checkAnswer(self, answer):
         return tokenize_word(answer) == self.current_city
+
+    def getCurrentCity(self):
+        return self.current_city

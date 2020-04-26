@@ -31,7 +31,7 @@ def get_bytes_map(coordinates, map_type):
     map_params = {
         "l": map_type,
         "ll": ",".join(map(str, coordinates)),
-        "z": 7,
+        "z": 16,
     }
 
     response = make_get_request(map_url, map_params)
